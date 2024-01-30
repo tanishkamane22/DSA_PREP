@@ -1,0 +1,30 @@
+//Factorial, ncr, npr
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int r = sc.nextInt();
+        int fact = factorial(n);
+        int rfact = factorial(r);
+        int nrfact = factorial(n-r);
+        int cans = fact/(rfact*nrfact);
+        int pans = fact/nrfact;
+        
+        System.out.println(fact);
+        System.out.println(pans);
+        System.out.println(cans);
+    }
+    public static int factorial(int n){
+        int ans = 1;
+        for(int i = 1;i<=n;i++){
+            ans = ans*i;
+        }
+        
+        return ans;
+    }
+}
